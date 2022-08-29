@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  color: #f5f5f5;
 }
 
 body {
@@ -9,10 +10,22 @@ body {
 }
 
 .navbar {
-  color: #F5F5F5;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  list-style: none;
+  padding-right: 50px;
 }
 
-.nav-list {
-  display: flex;
-  list-style: none;
+.navbar > button {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar > button:hover {
+  box-shadow: 0 15px 30px 3px #0ff;
+}
+
+.navbar-clicked {
+  box-shadow: 0 15px 30px 3px #0ff;
 }
