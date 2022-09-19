@@ -11,15 +11,25 @@ import Contact from './Contact';
 
 function App() {
   const [sections, setSections] = useState({
+    // Home
     home: true,
+    // About
     about: false,
+    // Portfolio
     portfolio: false,
+    // Contact
     contact: false
   })
 
+  function changePage(section) {
+    setSections(prevSection => prevSection.map(prev => {
+      return prev.section == section ? {...prev, section: !prev.section} : prev
+    }))
+  }
+
   return (
     <div className="App">
-        <Navbar sections={sections} />
+        <Navbar changePage={()=> changePage()} />
         {sections.home && <Home />}
         {sections.about && <About />}
         {sections.portfolio && <Portfolio />}
