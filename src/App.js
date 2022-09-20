@@ -12,28 +12,42 @@ import Contact from './Contact';
 function App() {
   const [sections, setSections] = useState({
     // Home
-    home: true,
+    home: {
+      id: 1,
+      current: true
+    },
     // About
-    about: false,
+    about: {
+      id: 2,
+      current: false
+    },
     // Portfolio
-    portfolio: false,
+    portfolio: {
+      id: 3,
+      current: false
+    },
     // Contact
-    contact: false
+    contact: {
+      id: 4,
+      current: false
+    }
   })
 
   function changePage(section) {
     setSections(prevSection => prevSection.map(prev => {
-      return prev.section == section ? {...prev, section: !prev.section} : prev
+      return prev.about.id === section ? 
+      {home: {current: true}} : 
+      {current: false}
     }))
   }
 
   return (
     <div className="App">
         <Navbar changePage={()=> changePage()} />
-        {sections.home && <Home />}
-        {sections.about && <About />}
-        {sections.portfolio && <Portfolio />}
-        {sections.contact && <Contact />}
+        {sections.home.current && <Home />}
+        {sections.about.current && <About />}
+        {sections.portfolio.current && <Portfolio />}
+        {sections.contact.current && <Contact />}
     </div>
   );
 }
