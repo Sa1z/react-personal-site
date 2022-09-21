@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar(props) {
 
-  const btnStyles = 'p-4 bg-neutral-700 rounded-full hover:bg-neutral-500'
+  const btnStyles = 'p-4 bg-neutral-700 drop-shadow-lg bg-opacity-75 rounded-full hover:bg-neutral-500'
   const btnSelected = 'p-4 bg-neutral-500 rounded-full'
 
 

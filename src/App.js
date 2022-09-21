@@ -36,13 +36,13 @@ function App() {
   function changePage(section) {
     setSections(prevSection => prevSection.map(prev => {
       return prev.about.id === section ? 
-      {home: {current: true}} : 
-      {current: false}
+      {about: {current: true}} : 
+      prev
     }))
   }
 
   return (
-    <div className="App">
+    <div className="">
         <Navbar changePage={()=> changePage()} />
         {sections.home.current && <Home />}
         {sections.about.current && <About />}
