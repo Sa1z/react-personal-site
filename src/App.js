@@ -44,10 +44,12 @@ function App() {
   return (
     <div className="">
         <Navbar changePage={()=> changePage()} />
-        {sections.home.current && <Home />}
-        {sections.about.current && <About />}
-        {sections.portfolio.current && <Portfolio />}
-        {sections.contact.current && <Contact />}
+        <div className='p-2 max-w-prose mx-auto'>
+          <Home />
+          {/* <About />
+          <Portfolio />
+          <Contact /> */}
+        </div>
     </div>
   );
 }
